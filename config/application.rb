@@ -21,5 +21,6 @@ module Whatif
     # config.i18n.default_locale = :de
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
+    config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
   end
 end
