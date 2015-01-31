@@ -8,4 +8,9 @@ class ApplicationController < ActionController::Base
       u.permit(:name, :email, :password, :password_confirmation)
     end
   end
+
+    def after_sign_in_path_for(resource)
+      post_path
+    end
+
 end
