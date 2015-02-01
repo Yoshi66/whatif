@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     :sessions      => "users/sessions",
     :registrations => "users/registrations"
   }
+  #get 'users/:id' => 'users/registrations#show'
+  get 'users/:id' => 'profiles#show', as:'profile'
   get 'home/index'
   get 'home/show'
   root 'home#index'
