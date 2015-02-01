@@ -1,40 +1,18 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Bulbists</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-  <!--[if lt IE 9]>
-<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]-->
-</head>
-<body>
-  <header class="navbar navbar-fixed-top navbar-inverse">
-    <div class="navbar-inner">
-      <div class="container">
-        <nav>
-          <%= link_to "Bulbists", root_path, id: "logo" %>
-          <ul class="nav pull-right">
-            <li><%= link_to "Home",    '#' %></li>
-            <li><%= link_to "Help",    '#' %></li>
-            <% if user_signed_in? %>
-              <li><%= link_to 'Profile', edit_user_registration_path %></li>|
-              <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
-            <% else %>
-              <li><%= link_to "SignUp", new_user_registration_path %></li>
-              <li><%= link_to "SignIn", new_user_session_path %></li>
-            <% end %>
-          </ul>
-        </nav>
-      </div>
+  <head>
+    <title>Bulbists</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <%= render 'layouts/shim'%>
+  </head>
+  <body>
+    <%= render 'layouts/header'%>
+    <div class='container'>
+        <%= yield %>
+        <%= render 'layouts/footer' %>
+        <%= debug(params) if Rails.env.development? %>
     </div>
-  </header>
-<%#  <p class='notice'><%= notice%></p>
-<%#  <p class='alert'><%= alert%></p>
-
-<%= yield %>
-<%= render 'layouts/footer' %>
-
-</body>
+  </body>
 </html>

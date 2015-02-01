@@ -7,8 +7,9 @@ Rails.application.routes.draw do
   }
   #get 'users/:id' => 'users/registrations#show'
   get 'users/:id' => 'profiles#show', as:'profile'
-  get 'home/index'
-  get 'home/show'
+  resources :home, only:[:index, :show]
+  get 'home/help'
+  get 'home/about'
   root 'home#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

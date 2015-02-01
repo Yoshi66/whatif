@@ -1,2 +1,21 @@
-<p>aaaaaa</p>
-<%= @user.email%>
+<div class="row">
+  <aside class="span4">
+    <section>
+      <h1>
+        <%= gravatar_for @user %>
+        <%= @user.name %>
+      </h1>
+    </section>
+    <section>
+
+    </section>
+  </aside>
+  <div class="span8">
+
+      <h3>Microposts (<%= @user.posts.count %>)</h3>
+      <ol class="microposts">
+        aa
+      </ol>
+
+  </div>
+</div>
