@@ -1,0 +1,53 @@
+|  
+.container
+  |          
+  h1
+    = link_to 'What If.......', new_post_path
+  |          
+  p.lead
+  |      
+.container
+  - # class='row-fluid'
+  .row-fluid
+    .span8
+      h3
+        | Posts
+      ol.posts
+        - @posts.each do |post|
+          = render post
+      = will_paginate @posts
+    .span4.well
+      ul.nav.nav-list
+        li.nav-header
+          | Our Services
+        li.active
+          a[href="#"]
+            | Overview
+        li
+          a[href="#"]
+            | Web Designing
+        li
+          a[href="#"]
+            | Web Development
+        li
+          a[href="#"]
+            | Android Applications
+        li.divider
+        li.nav-header
+          | Our Services
+        li
+          a[href="#"]
+            | Overview
+        li
+          a[href="#"]
+            | Web Designing
+        li
+          a[href="#"]
+            | Web Development
+        li
+          a[href="#"]
+            | Android Applications
+        li.divider
+        li
+          a[href="#"]
+            | Help

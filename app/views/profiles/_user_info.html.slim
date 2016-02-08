@@ -1,0 +1,8 @@
+a[href="#"]
+  = gravatar_for @user, size: 52
+h1
+  = current_user.name
+span
+  = link_to "view my profile", '#'
+span
+  = @user.posts.count

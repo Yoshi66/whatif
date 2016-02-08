@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :posts, dependent: :destroy
+  has_many :comments, dependent: :destroy
   def feed
     # このコードは準備段階です。
     # 完全な実装は第11章「ユーザーをフォローする」を参照してください。

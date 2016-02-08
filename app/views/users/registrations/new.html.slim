@@ -1,0 +1,31 @@
+.col-md-12
+  h3 Sign Up
+  div style="margin-top:20px;border:5px #eee solid;width:100%;"
+    div style="padding:30px;color:#999;height:230px;"
+      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+        = devise_error_messages!
+        div style="float:left;margin-right:30px;"
+          table
+            tr
+              th style="text-align:right;"
+                = f.label :name,"Name:", style:"margin-right:10px;"
+              td
+                = f.text_field :name, placeholder:"Name", required:"required"
+            tr
+              th style="text-align:right;"
+                = f.label :email,"Email:", style:"margin-right:10px;"
+              td
+                = f.email_field :email, placeholder:"Email", required:"required"
+            tr
+              th style="text-align:right;"
+                = f.label :password,"Password:", style:"margin-right:10px;"
+              td
+                = f.text_field :password, placeholder:"Password", required:"required"
+          = render "users/shared/links"
+          .form-group
+            .actions style="margin:auto;padding:15px 0 0 95px;"
+              = f.submit "Sign Up", class:"btn btn-default btn-success center-block"
+        div style="float:.left;color:#5bb65b;"
+          h1 style="padding:15px;font-size:36px;" Describe Your What If!:)
+
+

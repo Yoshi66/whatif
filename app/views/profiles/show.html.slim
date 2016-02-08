@@ -1,0 +1,20 @@
+.row
+  .span8
+    |  aaaaaaaa 
+  .span8
+    |  bbbbbbbb 
+.row
+  aside.span4
+    section
+      h1
+        = gravatar_for @user
+        = @user.name
+    section
+
+  .span8
+    h3
+      | Microposts (
+      = @user.posts.count
+      | )
+    ol.microposts
+      |  aa 

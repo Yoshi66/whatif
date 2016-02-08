@@ -15,6 +15,10 @@ gem 'turbolinks'
 gem 'therubyracer'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'slim-rails'
+gem 'less-rails'
+gem 'twitter-bootstrap-rails'
+gem "font-awesome-rails"
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -26,8 +30,9 @@ end
 
 group :development, :test do
   # Call 'debugger' anywhere in the code to stop execution and get a debugger console
-  gem 'debugger'
+  # gem 'debugger'
   gem 'sqlite3'
+  gem 'faker'
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
 end

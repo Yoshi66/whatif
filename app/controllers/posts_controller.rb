@@ -11,6 +11,8 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+    @comment = Comment.new
+    @comments = Comment.where(post_id: params[:id])
   end
 
   # GET /posts/new
@@ -29,7 +31,7 @@ class PostsController < ApplicationController
     @post = @user.posts.build(post_params)
     respond_to do |format|
       if @post.save
-        format.html { redirect_to posts_path, notice: 'Post was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Post was successfully created.' }
         format.json { render :show, status: :created, location: @post }
       else
         format.html { render :new }
@@ -70,6 +72,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:content, :user_id)
+      params.require(:post).permit(:title,:content, :user_id)
     end
 end
