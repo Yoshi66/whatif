@@ -11,4 +11,5 @@ html
     = render 'layouts/header'
     .container
       .row
+        #show_modal.modal.fade aria-hidden="true" aria-labelledby="modal_label" role="dialog" style="display:none;height:430px;" tabindex="-1"
         = yield

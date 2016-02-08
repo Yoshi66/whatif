@@ -1,0 +1,23 @@
+div style="padding:10px;"
+  div style="border-bottom:1px #eee solid;"
+    button.close type="button" data-dismiss="modal" aria-label="Close"
+      |X
+    h3 What If..
+
+  div style="padding:15px;"
+    = form_for(@post) do |f|
+      div style="width:100%;"
+        table style="width:100%;"
+          tr style="width:100%;"
+            th style="text-align:right;"
+              = f.label :title,"Title:", style:"margin-right:10px;"
+            td
+              = f.text_field :title, placeholder:"Title", required:"required", style:"height:25px;width:400px;"
+          tr
+            th style="text-align:right;"
+              = f.label :content,"Content:", style:"margin-right:10px;"
+            td
+              = f.text_field :content, placeholder:"Content", required:"required",style:"height:210px;width:400px;"
+        .form-group
+          .actions style="margin:auto;padding:15px 0 0 95px;text-align:center;"
+            = f.submit "Sign Up", class:"btn btn-default btn-success center-block", style:"width:80%;"
